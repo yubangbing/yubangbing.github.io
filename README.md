@@ -1,170 +1,176 @@
-GitHub搭建个人网站详细教程
-2016-11-08 zuidaima
+# HANUMAN Jekyll Theme
 
-原文：http://blog.csdn.net/gane_cheng/article/details/52203759
-作者：Gane_Cheng
-最近在找实习，需要写一份含有丰富内容的简历，但是简历最多只能写两页纸。再多的话就会让面试官烦了，找不到重点。如果还想向面试官展示更多的个人能力，经验，经历，在简历上放上自己的个人网站链接无疑是一种比较好的方式。面试官想了解更多的话，打开链接就知道你的知识的深度和广度了，能为面试加分不少。
+[![Build Status](https://travis-ci.org/samanyougarg/hanuman.svg?branch=master)](https://travis-ci.org/samanyougarg/hanuman)
 
-想搭建一个个人网站，首先需要有一个域名，别人能够访问，其次还要有一个空间来存放你的页面。
+Hanuman is a minimal yet powerful Jekyll theme for your blogs and websites.
 
-域名 
-域名可以在万网，新网，GoDaddy上注册。万网和新网是国内的域名注册服务提供商，价格较便宜，但是需要通过国内的域名备案，备案审核速度略慢，还要上传证件之类的，束缚太多，不够自由。而且只接受指定域名后缀备案，比如说.com.，.cn，.com.cn。如果需要在国内开展业务的话，还是老老实实备案注册，免得到时候被限制访问。但是搭建一个个人网站的话，没有必要搞的这么复杂，直接在GoDaddy上购买一个域名即可。
-空间 
-空间有免费空间，也有收费空间。免费的不够稳定，收费的太贵，终究是不爽。有没有又免费又稳定的空间呢？还真有，GitHub。GitHub允许上传个人网站项目并自定义域名，而且又有稳定的服务，实在是上上之选。
-下面就跟着我一步一步来利用GitHub搭建个人网站吧↓↓↓↓↓
+It is built using the open source [AMP Start framework](https://www.ampstart.com/) and can be customized as per your requirements.
 
-第一步 拥有一个域名
+<a href="https://www.buymeacoffee.com/samanyougarg"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" target="_blank"></a>
 
-首先需要拥有一个自己的域名，下面以GoDaddy为例，讲述如何购买一个个人域名。 
-打开GoDaddy中文官网 https://sg.godaddy.com/zh/。
+## Live Demo
+## [Hanuman](https://samanyougarg.com/hanuman)
+![Hanuman](/Screenshots/hanuman.jpg "Hanuman Preview")
 
 
+## Features
 
-登录这个网站，如果没有账号，先创建账户，然后登录。
+- Minimal
+- Responsive
+- Syntax Highlighting for code
+- Cover Images for homepage and blog posts
+- Social Sharing
+- Simple Navigation Menu
+- Pagination
+- Google Analytics
+- Can be easily installed via "theme gem"
+- Github Pages support
+- Easily Customisable
+- Tags
+- Multiple Authors
 
-搜索你想要的域名。
+## What is AMP
 
+AMP stands for [Accelerated Mobile Pages](https://www.ampproject.org/), a Google-backed project designed as an open standard for any publisher to have pages load quickly on mobile devices.
 
+## Installation
 
-我买的域名是这个：http://www.ganecheng.site/ ，7元人民币。自己玩一下，没有必要买那么好的域名。
+There are different ways to install the theme -
 
+### 1. Cloning the repository and updating settings
+1. Fork this repository and clone the forked repository.
+2. Update the _config.yml file as per your requirements.
+3. Add your posts to the _posts directory.
+4. Deploy to Github Pages or your own server.
 
+#### Deploying to Github Pages
+**Method 1**
 
-付款的时候选择国内更接地气的支付宝即可。
+Push the contents of the destination folder (mentioned in _config.yml. eg - destination: ../hanuman-pages/) to the gh-pages branch(if project page) or master branch(if user page) of your repository.
 
+**Method 2**
 
+- Set up travis-ci for your fork.
+- Generate your secure token with the travis gem:
+  Run `gem install travis` on your terminal.
+- Grab the GH_TOKEN from https://github.com/settings/tokens
+- Then run `travis encrypt 'GIT_NAME="YOUR_USERNAME" GIT_EMAIL="YOUR_EMAIL" GH_TOKEN=YOUR_TOKEN'`
+- Add the token to your .travis.yml file.
+Now you just need to push the files. Travis will generate the HTML files and automatically push them to your gh-pages branch.
+This is the setup I am using.
 
-付款成功三分钟左右，域名准备工作就全部做好了。可以对域名进行管理了。现在先不设置，放在后面的步骤进行设置。
+### 2. Ruby Gem Method
+Add this line to your Jekyll site's `Gemfile`:
 
+```ruby
+gem "hanuman"
+```
 
+And add this line to your Jekyll site's `_config.yml`:
 
-第二步 拥有一个GitHub账号
+```yaml
+theme: hanuman
+```
 
-互联网崇尚自由与分享。GitHub是一个全世界程序员聚集起来的地方，大家互相分享自己的代码，提升别人，也提升自我。大家都在为着开源社区努力着。因为我从开源项目中学到很多知识，所以我也非常愿意分享我的所见所得所学。我的GitHub主页是：https://github.com/ganecheng。
+And then execute:
 
-如果没有GitHub账号就先去注册一个吧，有的话，直接登录即可，后面的操作都要用到GitHub。
+    $ bundle
 
-第三步 GitHub上新建个人网站项目
+Or install it yourself as:
 
-重头戏来了。
+    $ gem install hanuman
 
-新建一个仓库
+You'll also need to copy or create the _config.yml file just like in this repository. Similarly, you'll need to have a navigation.yml and author.yml in your _data directory.
 
-登录GitHub之后，在页面右上角点击+加号按钮，点击New repository。 
+#### Deploying to Github Pages
+Run `bundle exec jekyll serve` inside your cloned repository. Push the contents of the resulting _site to your Github Pages repository.
 
 
-由于我们是新建一个个人网站项目，所有仓库的名称需要安装GitHub个人网站项目的规定来写。 
-规则就是：
+### 3. Jekyll Remote Theme
+1. Create or update your Gemfile with the following -
 
-YOUR-GITHUB-USERNAME.github.io
-比如我的GitHub用户名是ganecheng，那我就要填写ganecheng.github.io。然后选择公开模式，接着点击创建仓库按钮。
+```ruby
+source "https://rubygems.org"
+gem "github-pages", group: :jekyll_plugins
+gem "jekyll-remote-theme"
+```
 
+2. Update the bundled gems using `bundle` command.
 
+3. Add `remote_theme: "hanuman"` to your `_config.yml`.
 
-创建成功之后，进入了项目主页面。点击设置按钮。
+4. Add `jekyll-remote-theme` to the plugins array of your `_config.yml` -
 
+```yaml
+plugins:
+  - jekyll-remote-theme
+```
 
+## Usage
 
-进入之后，滚动页面到下方。点击页面自动生成器按钮。
+### _config.yml
+Update _config.yml with your respective settings like updating your site's name, description etc...
 
+### Styling
+AMP has a limitation that you can only use inline css.
+All the CSS for this theme is in the styles.scss file in the includes directory.
 
+#### Changing the Default Color
+In the styles.scss file in the includes directory, you can change the hex value of $theme-color to the color you would like your site to use.
 
-点击右下方继续去布局按钮。
+### Author Information
+Author information is present in the author.yml file in the _data folder. You can update the fields of that file as per your requirements.
 
+### Sidenav
+Sidenav can be updated from the navigation.yml file in the _data folder.
 
+## Writing Posts
+You can write posts just as you would in Jekyll, the only difference being that AMP has some strict guidelines on including external content.
 
-选择一个模板，点击发布页面按钮。
+You cannot use Markdown format or normal HTML tags. AMP provides its own custom tags for images, videos etc...
 
+### Examples -
 
+**Images**
+`<amp-img src="welcome.jpg" alt="Welcome" height="400" width="800"></amp-img>`
 
-这个时候，你就可以通过YOUR-GITHUB-USERNAME.github.io来访问此页面了。
+**Videos**
+`<amp-youtube data-videoid="mGENRKrdoGY" layout="responsive" width="480" height="270"></amp-youtube>`
 
-第四步 上传个人网页到GitHub
+[See Full AMP Documentation.](https://www.ampproject.org/docs/)
 
-自动生成页面，肯定不符合我们的要求，我们希望能够自己设计自己的个人网站。我们可以自己编写一个网页文件，命名为index.html。然后上传到GitHub个人网站项目上。这里为了节约时间，可以先下载我的个人网站项目代码，然后修改为你的网页上传到GitHub。
+### Using AMP Components
+Some AMP components require you to specify external scripts before using them.
+You can specify these scripts in the head.html file in the includes directory after the already imported scripts and then use these components in any post.
 
-下面介绍详细步骤。
+## Validating your page with AMP
+AMP provides built-in validator to validate your pages so that they can rendered quickly.
 
-进入此项目https://github.com/ganecheng/ganecheng.github.io，然后下载源码。解压之后，拿到里面的index.html文件。
+You can access this validator by opening the Developer Console in your browser and adding #development=1 to any url of your site.
 
+Example -
+http://localhost:4000/#development=1
 
+If you have errors on your page, AMP will list those for you in the console. If you do not have any errors, you'll get a message "AMP Validation Successful" on your console.
 
-然后进入自己的个人网站项目主页YOUR-GITHUB-USERNAME/YOUR-GITHUB-USERNAME.github.io。点击上传文件按钮，进入上传文件页面，将index.html文件拖入蓝色大圈圈区域，点击提交按钮即可提交成功。此时打开网址YOUR-GITHUB-USERNAME.github.io就可以看到主页已经改变为我们自己的网页了。
+## Enabling Google Analytics
+1. Set up your Analytics Tracking ID in _config.yml.
+2. Remove {% comment %} and {% endcomment %} tags in the default.html file in layouts directory.
 
+## Contributing
 
+Bug reports and pull requests are welcome on GitHub at https://github.com/samanyougarg/hanuman. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+To submit a pull request -
 
+1. Fork/clone the repository.
+2. Develop.
+3. Create a new branch from the master branch.
+4. Open a pull request on Github describing what was fixed or added.
 
-第五步 域名CNAME到个人网站项目
+## Thanks
+Hanuman is based on [amplify](https://github.com/ageitgey/amplify) jekyll theme. Thank You.
 
-网页上传成功了，我们不想一直通过YOUR-GITHUB-USERNAME.github.io来访问我们的个人网站，而是希望通过自己的域名来访问。
+## License
 
-下面讲述详细步骤。
-
-点击我们的个人网站项目设置选项卡，滚动到下面，就会发现一个自定义域名卡片。输入我们前面在GoDaddy上买的域名，然后点击保存。
-
-
-
-接着我们还要将我们的域名解析到这个个人网站项目上。打开GoDaddy域名管理页面。点击右上角设置图标，点击管理DNS按钮。进入到DNS管理页面。
-
-
-
-接着，点击添加一条域名解析记录，之前GoDaddy自动添加的没用的解析可以全部删掉，主机填写www，代表你是一级域名来访问，指向填写YOUR-GITHUB-USERNAME.github.io，然后点击保存按钮。稍等片刻，域名解析就会生效。
-
-
-
-第六步 访问你的域名
-
-所有这些步骤做完之后，在浏览器里输入自己的域名，回车键一按，就会返回我们刚刚上传到GitHub的index.html页面了。
-
-这里只是入门了GitHub搭建个人网站的功能，GitHub官方推荐Jekyll博客系统来发布自己的页面。以后有数据更新，都可以通过Jekyll来重新编译整个网站。
-
-
-
-注意事项：
-
-尽管GitHub个人网站项目是免费的，但是却有一些限制。总体来说，完全够用，甚至太多了。
-
-单个仓库大小不超过1GB，上传单个文件大小不能超过100MB，如果通过浏览器上传不能超过25MB
-个人网站项目也不例外，最大空间1GB
-个人网站项目每个月访问请求数不能超过10万次，总流量不能超过100GB
-个人网站项目一小时创建数量不能超过10个
-当然了，这些政策可能随时改变，可以通过此网页查看最新政策。 
-https://help.github.com/articles/what-is-github-pages/#recommended-limits
-
-阅读原文阅读 185917 投诉
-精选留言
-写留言
-
- 2
-待我事业有成
-
-可以，不错，谢谢楼主分享
-昨天
- 1
-阿飞
-
-新网的域名也有便宜的，我买了一个，一年也就7块钱
-4小时前
- 1
-头上一片天空
-
-我去试试看  感谢分享
-昨天
- 
-Steven_
-
-感谢楼主。。
-5小时前
- 
-小痞子坏蛋
-
-感谢(❁´ω`❁)楼主分享，慢慢体会到了开源的好处。
-昨天
- 
-四爷
-
-挺有意思的，适合很多新手玩，哈哈。
-昨天
-以上留言由公众号筛选后显示
-了解留言功能详情
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
