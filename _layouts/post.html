@@ -16,13 +16,11 @@ layout: default
 
   <section class="post">
     {{ content }}
-
   </section>
 </article>
 
 {% include new-old.html %}
-{% include comments.html %}
-<br><br><div>aaflag</div>
+<br><br><br>
 <div id="gitmentContainer"></div>
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -37,3 +35,4 @@ var gitment = new Gitment({
 });
 gitment.render('gitmentContainer');
 </script>
+
