@@ -63,4 +63,4 @@ Usage:
     {% endif %}
   {% endfor %}
 {% endif %}
-{% assign posts_collate = nil %}</div>
+{% assign posts_collate = nil %}</div> 

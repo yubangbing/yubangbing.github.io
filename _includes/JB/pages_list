@@ -35,5 +35,5 @@ Usage:
     {% endif %}
   {% endfor %}
 {% endif %}
-{% assign pages_list = nil %}
+{% assign pages_list = nil %} 
 {% assign group = nil %}
