@@ -16,7 +16,20 @@ layout: default
 
   <section class="post">
     {{ content }}
-
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'yubangbing',
+    repo: 'https://github.com/yubangbing/yubangbing.github.io',
+    oauth: {
+        client_id: '64a07a8fe203af094c47',
+        client_secret: '682a4cfce79b1e200e0aa738c5e7d031e322bf39',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
   </section>
 </article>
 
