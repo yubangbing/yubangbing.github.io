@@ -36,4 +36,4 @@ tag: 博客
 
 <br>
 
-转载请注明：[潘柏信的博客](http://baixin) » [点击阅读原文](http://baixin.io/2016/06/HEXO_Advanced/)
+转载请注明：[於帮兵的博客](http://yubangbing.github.io)
