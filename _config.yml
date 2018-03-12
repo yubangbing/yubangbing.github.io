@@ -8,8 +8,8 @@ avatarTitle: binky
 avatarDesc: java / 机器学习
 
 # Comment
-comment:
-    disqus: binky
+#comment:
+    #disqus: binky
     # uyan: 2143225  # 有言id,登录有言官网申请
 
 # Social
